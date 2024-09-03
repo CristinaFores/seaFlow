@@ -1,0 +1,75 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+*:not(dialog),
+*::before:not(dialog::before),
+*::after:not(dialog::after) {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  line-height: 0.9;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  line-height: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:hover {
+    color: inherit;
+  }
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
