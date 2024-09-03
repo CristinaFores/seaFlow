@@ -1,10 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom'
 
+import MainLayout from '../layouts/MainLayout'
+
 import ROUTE_PATH from './routerPath'
 
 const routes = [
   {
-    path: ROUTE_PATH.ROOT, element: <h1>Home</h1>,
+    path: ROUTE_PATH.ROOT, element: <MainLayout />,
     children: [
       { path: ROUTE_PATH.DASHBOARD, element: <h1>Dashboard</h1> },
       { path: ROUTE_PATH.ASTRO, element: <h1>Astro Info</h1> },

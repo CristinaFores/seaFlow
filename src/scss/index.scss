@@ -1,6 +1,14 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
+
+//Layouts
+@import "./layouts/mainLayout.scss";
+
+
+//Components
+@import "./components/common/modal.scss";
+
 *:not(dialog),
 *::before:not(dialog::before),
 *::after:not(dialog::after) {
