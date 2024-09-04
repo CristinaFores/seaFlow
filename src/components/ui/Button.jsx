@@ -34,7 +34,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={buttonStyles[typeStyled] + ' ' + className}
+      className={`${className} ${buttonStyles[typeStyled]} `}
       onClick={onClick}
       disabled={disabled}
       {...props}

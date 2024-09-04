@@ -4,6 +4,7 @@
   padding: 0px; 
   background: none;
   overflow: visible;
+  z-index: 2;
 
   &::backdrop {
     background-image: var(--backdrop-image);

@@ -1,12 +1,18 @@
 import { Outlet } from 'react-router-dom'
 
-import Button from '../components/ui/Button'
+import ModalLocationSelect from '../components/common/ModalLocationSelect'
+
 
 const MainLayout = () => {
   return (
     <>
       <div className="main-layout">
         <Outlet />
+        <ModalLocationSelect
+          isOpen={true}
+          onGPSClick={() => { }}
+          onListClick={() => { }}
+        />
       </div>
     </>
   )

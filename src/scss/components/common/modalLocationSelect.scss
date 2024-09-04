@@ -1,0 +1,37 @@
+.modal-location-select {
+  background: linear-gradient(135deg, #4a00e0, #8e2de2);
+  padding: 30px 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  z-index: 2;
+  position: relative;
+  display: grid;
+  gap: 20px;
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 150px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  &__button {
+    background: transparent;
+  }
+
+  &__description {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}
