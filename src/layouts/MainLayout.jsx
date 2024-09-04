@@ -1,17 +1,23 @@
 import { Outlet } from 'react-router-dom'
 
 import ModalLocationSelect from '../components/common/ModalLocationSelect'
+import useGeolocation from '../hooks/useGeolocation'
 
 
 const MainLayout = () => {
+
+  const { getLocation, isLocationLoading, locationError, isLocationSuccess } = useGeolocation()
+
   return (
     <>
       <div className="main-layout">
         <Outlet />
+
         <ModalLocationSelect
-          isOpen={true}
-          onGPSClick={() => { }}
-          onListClick={() => { }}
+          onGPSClick={getLocation}
+          isPending={isLocationLoading}
+          isError={locationError}
+          isSuccess={isLocationSuccess}
         />
       </div>
     </>

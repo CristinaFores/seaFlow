@@ -6,7 +6,9 @@ const ModalLocationSelect = ({
   isOpen,
   onGPSClick,
   onListClick,
-  children,
+  isPending,
+  isError,
+  isSuccess
 }) => {
 
   return (
@@ -30,7 +32,11 @@ const ModalLocationSelect = ({
             onClick={onListClick}
           />
         </section>
-        {children}
+
+        {isPending && (<p >Cargando ubicación...</p>)}
+        {isError && (<p > Ha ocurrido un error al cargar la ubicación </p>)}
+        {isSuccess && (<p > Ubicación cargada con éxito </p>)}
+
         <p className="modal-location-select__description">
           Selecciona una de las opciones anteriores para
           encontrar la estación más cercana a tu ubicación
