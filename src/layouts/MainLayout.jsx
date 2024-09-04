@@ -1,5 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
+import Button from '../components/ui/Button'
+
 const MainLayout = () => {
   return (
     <>

@@ -6,8 +6,15 @@
 @import "./layouts/mainLayout.scss";
 
 
-//Components
+//Components 
+
+//Common
 @import "./components/common/modal.scss";
+
+
+//UI
+@import "./components/ui/button.scss";
+
 
 *:not(dialog),
 *::before:not(dialog::before),
