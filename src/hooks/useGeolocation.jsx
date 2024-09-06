@@ -1,3 +1,4 @@
+import { useMutation } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
 
 import useStoreUser from '../store/useStoreUser'
@@ -23,34 +24,33 @@ const useGeolocation = () => {
     setLocationError('No se ha podido obtener la ubicación.')
   }
 
-  const getLocation = () => {
-    if (isLocationLoading) { return }
-
-    setIsLocationSuccess(false)
-    setLocationError(null)
-    setIsLocationLoading(true)
-
-    if (!navigator.geolocation) {
-      setLocationError('La geolocalización no es compatible con este navegador.')
-      setIsLocationLoading(false)
-      return
+  const getLocation = useMutation({
+    mutationFn: () => {
+      return new Promise((resolve, reject) => {
+        if (!navigator.geolocation) {
+          reject('La geolocalización no es compatible con este navegador.')
+          return
+        }
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            handleSuccess(position)
+            resolve()
+          },
+          (error) => {
+            handleError(error)
+            reject()
+          }
+        )
+      })
     }
+  })
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        handleSuccess(position)
-      },
-      (error) => {
-        handleError(error)
-      }
-    )
-  }
 
-  useEffect(() => {
-    if (isLocationSuccess) {
-      setIsLocationLoading(false)
-    }
-  }, [isLocationSuccess])
+  // useEffect(() => {
+  //   if (isLocationSuccess) {
+  //     setIsLocationLoading(false)
+  //   }
+  // }, [isLocationSuccess])
 
 
   return { locationError, isLocationSuccess, isLocationLoading, getLocation }
