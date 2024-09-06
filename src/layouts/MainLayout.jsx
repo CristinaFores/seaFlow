@@ -23,11 +23,9 @@ const MainLayout = () => {
       <div className="main-layout">
         <Outlet />
 
-        {isModalLocationSelectOpen && (
-          <ModalLocationSelect
 
-          />
-        )}
+        <ModalLocationSelect isOpen={isModalLocationSelectOpen} setIsOpen={setIsModalLocationSelectOpen} />
+
       </div>
     </>
   )

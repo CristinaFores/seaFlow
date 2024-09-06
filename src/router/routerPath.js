@@ -1,7 +1,7 @@
 
 const ROUTE_PATH = {
   ROOT: '/',
-  DASHBOARD: 'forecast',
+  DASHBOARD: 'home',
   ASTRO: 'astro',
   FORECAST: 'forecast',
   WAVES: 'waves',
