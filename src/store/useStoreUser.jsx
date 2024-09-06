@@ -17,11 +17,11 @@ export const useStoreUser = create(
   persist(
     (set) => ({
       user: initialState.user,
-      setTime: (time) =>
+      setUserTime: (time) =>
         set((state) => {
           return { user: { ...state.user, time } }
         }),
-      setDate: (date) =>
+      setUserDate: (date) =>
         set((state) => {
           return { user: { ...state.user, date, time: 0 } }
         }),

@@ -5,6 +5,8 @@
 //Layouts
 @import "./layouts/mainLayout.scss";
 
+//Pages
+@import "./pages/weatherHomePage.scss";
 
 //Components 
 
@@ -12,6 +14,8 @@
 @import "./components/ui/button.scss";
 @import "./components/ui/spinner.scss";
 @import "./components/ui/titleLocation.scss";
+@import "./components/ui/dayPicker.scss";
+@import "./components/ui/timeSlider.scss";
 
 //Common
 @import "./components/common/modal.scss";
