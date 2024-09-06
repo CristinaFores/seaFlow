@@ -1,0 +1,107 @@
+.time-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+  border-radius: 10px;
+
+  &__input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background-color: $indigo-500;
+      border-radius: 50%;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+      transition: background-color 0.3s;
+    }
+
+    &::-moz-range-thumb {
+      width: 15px;
+      height: 15px;
+      background-color: $indigo-600;
+      border-radius: 50%;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+      transition: background-color 0.3s;
+    }
+
+    &::-ms-thumb {
+      width: 15px;
+      height: 15px;
+      background-color: $indigo-600;
+      border-radius: 50%;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+      transition: background-color 0.3s;
+    }
+  }
+
+  &__labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+    position: relative;
+    padding: 5px 0;
+    margin-bottom: -15px; /* Adjust for alignment */
+    border-bottom: 1px solid #666;
+  }
+
+  &__label {
+    position: relative;
+    text-align: center;
+
+    &:before {
+      content: "";
+      display: block;
+      height: 8px;
+      width: 1px;
+      background: #666;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: calc(100% + 5px);
+    }
+
+    &:first-child:before {
+      left: 0%;
+      transform: none;
+    }
+
+    &:last-child:before {
+      left: 100%;
+      transform: translateX(-100%);
+    }
+  }
+
+  &__display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    padding: 10px;
+   background-color: #f0f0f0;
+
+    &-text {
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.day-picker {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
+  font-size: 1rem;
+
+  &__button {
+    background-color: $indigo-100;
+    border: 1px solid $indigo-100;
+    border-radius: 5px;
+    padding: 8px 5px;
+    width: 100%;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    color: #555;
+
+
+    &:hover:is(:not(.day-picker__selected)) {
+      background-color: $indigo-200;
+      color: #333;
+      border-color: #ccc;
+    }
+
+    span:first-child {
+      font-weight: 600;
+    }
+  }
+  &__selected {
+    background-color: $indigo-500;
+    color: #fff;
+    border-color: $indigo-500;
+    transition: all 0.3s;
+  }
+}

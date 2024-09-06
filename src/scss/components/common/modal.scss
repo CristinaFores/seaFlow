@@ -1,0 +1,30 @@
+.modal {
+  border: none;
+  display: flex;
+  padding: 0px; 
+  background: none;
+  overflow: visible;
+  z-index: 2;
+
+  &::backdrop {
+    background-image: var(--backdrop-image);
+    background-color: var(--backdrop-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+
+  }
+  
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 200vh;
+    background-color: rgba(128, 0, 128, 0.2);
+    z-index: 1; 
+  }
+
+}

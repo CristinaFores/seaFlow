@@ -1,0 +1,57 @@
+.button-primary {
+  border: 1px solid white;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: $indigo-600;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  transition: background-color 0.3s ease;
+
+  &:enabled:hover {
+    background: $indigo-800;
+  }
+
+  &:disabled {
+    background: $indigo-500;
+    opacity: 0.7;
+  }
+
+  svg {
+    justify-self: flex-end;
+  }
+}
+
+.button-secondary {
+  text-align: center;
+  padding: 8px;
+  color: $indigo-500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in;
+  border: 1px solid $indigo-500;
+  border-radius: 5px;
+  font-size: 1rem;
+  max-width: 7.5rem;
+  min-width: 5.625rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  &:enabled:hover {
+    background-color: $indigo-500;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    background: $indigo-500;
+    color: white;
+    opacity: 0.7;
+  }
+  svg {
+    justify-self: flex-end;
+  }
+}
