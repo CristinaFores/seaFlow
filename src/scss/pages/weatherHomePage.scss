@@ -1,4 +1,13 @@
 .weather-home-page {
+  display: grid;
+  gap: 1rem;
+
+    &__title {
+    font-size: 2rem;
+    color: $indigo-500;
+    margin-bottom: 10px;
+  }
+
   &__time-controls {
     display: grid;
     gap: 1rem;

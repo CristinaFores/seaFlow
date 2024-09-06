@@ -16,6 +16,7 @@ import {
 import { fillColorsDefault, gradientColorsDefault } from '../../helpers/theme/colors'
 import conditionsIcons from '../../helpers/theme/conditionsIcons'
 import indexUV from '../../helpers/theme/indexUV'
+import Spinner from '../ui/Spinner'
 
 
 const TooltipCustom = ({ children, place = top, ...props }) => {
@@ -151,17 +152,29 @@ const WeatherCircleSVG = ({ gradientColors = gradientColorsDefault, fillColors =
   )
 }
 
-const WeatherInfoCircle = ({ currentWeather, astroData, userTime }) => {
+const WeatherInfoCircle = ({ currentWeather, astroData, userTime, isPending }) => {
   return (
     <>
       <div className="weather-circle">
         <div className="weather-circle__container">
           <WeatherCircleSVG />
         </div>
-        <WeatherDetails currentWeather={currentWeather} userTime={userTime} />
-        <AstroInfo astroData={astroData} />
+        {isPending ? (
+          <Spinner
+            linearGradient="secondary"
+            size="large"
+            className="weather-circle__spinner"
+          />
+        ) : (
+          <>
+            <WeatherDetails
+              currentWeather={currentWeather}
+              userTime={userTime}
+            />
+            <AstroInfo astroData={astroData} />
+          </>
+        )}
       </div>
-
     </>
   )
 }

@@ -18,10 +18,16 @@ const colorSpinner = {
     { offset: '80%', stopColor: 'white', stopOpacity: .8 },
   ],
   secondary: [
-    { offset: '20%', stopColor: 'white', stopOpacity: 0.2 },
-    { offset: '80%', stopColor: 'white', stopOpacity: .8 },
+    { offset: '20%', stopColor: '#4f46e5', stopOpacity: 0.2 },
+    { offset: '80%', stopColor: '#818cf8', stopOpacity: .8 },
   ],
 }
+
+// const gradientColorsDefault = [
+//   { color: '#4f46e5', offset: '0%' },
+//   { color: '#818cf8', offset: '30%' },
+//   { color: '#c7d2fe', offset: '100%' },
+// ]
 
 function Spinner({
   width = '',

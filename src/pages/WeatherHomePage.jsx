@@ -15,15 +15,14 @@ function WeatherHomePage() {
 
   const {
     mutate: getWeatherForecast,
-    data: newWeatherForecast } = useWeatherForecast()
-
-
+    data: newWeatherForecast,
+    isPending: isWeatherForecastPending,
+  } = useWeatherForecast()
 
   const currentWeather = newWeatherForecast?.hourly?.find((current) => {
     const hourUnix = new Date(current.time).getHours() * 60
     return hourUnix <= user.time && user.time < hourUnix + 60
   }) ?? {}
-
 
   useEffect(() => {
     if (user?.locationSelected !== null) {
@@ -31,27 +30,29 @@ function WeatherHomePage() {
         latitude: user?.locationSelected?.latitude,
         longitude: user?.locationSelected?.longitude,
         date: format(new Date(user.date), 'yyyy-MM-dd'),
-      }, {
-        onError: (error) => {
-
-        }
       })
     }
   }, [user?.locationSelected, user.date, getWeatherForecast])
 
-
-
   return (
     <div className="weather-home-page">
+      <h1 className="weather-home-page__title">Marine Weather Forecast</h1>
       <TitleLocation />
       <section className="weather-home-page__time-controls">
         <WeatherInfoCircle
           currentWeather={currentWeather}
           astroData={newWeatherForecast?.astro}
           userTime={time}
+          isPending={isWeatherForecastPending}
         />
-        <TimeSlider time={time} setTime={setUserTime} />
-        <DayPicker currentDate={date} setCurrentDate={setUserDate} />
+        <TimeSlider
+          time={time}
+          setTime={setUserTime}
+        />
+        <DayPicker
+          currentDate={date}
+          setCurrentDate={setUserDate}
+        />
 
       </section>
     </div>
