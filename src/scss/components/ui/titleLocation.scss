@@ -1,0 +1,10 @@
+.title-location {
+  display: grid;
+  grid-gap: 2px;
+
+  p {
+    font-size: 0.83em;
+    font-weight: bold;
+    unicode-bidi: isolate;
+  }
+}
