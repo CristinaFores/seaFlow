@@ -1,6 +1,6 @@
 .day-picker {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: auto repeat(7, 1fr) auto;
   gap: 5px;
   width: 100%;
   font-size: 1rem;
@@ -19,8 +19,7 @@
     gap: 5px;
     color: #555;
 
-
-    &:hover:is(:not(.day-picker__selected)) {
+    &:enabled:hover:is(:not(.day-picker__selected)) {
       background-color: $indigo-200;
       color: #333;
       border-color: #ccc;
@@ -29,6 +28,15 @@
     span:first-child {
       font-weight: 600;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: #ccc;
+
+      svg path {
+        fill: #ccc;
+      }
+    }
   }
   &__selected {
     background-color: $indigo-500;
@@ -36,4 +44,5 @@
     border-color: $indigo-500;
     transition: all 0.3s;
   }
+
 }

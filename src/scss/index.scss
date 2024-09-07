@@ -1,14 +1,13 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-
 //Layouts
 @import "./layouts/mainLayout.scss";
 
 //Pages
 @import "./pages/weatherHomePage.scss";
 
-//Components 
+//Components
 
 //UI
 @import "./components/ui/button.scss";
@@ -16,13 +15,13 @@
 @import "./components/ui/titleLocation.scss";
 @import "./components/ui/dayPicker.scss";
 @import "./components/ui/timeSlider.scss";
+@import "./components/ui/tabs.scss";
 
 //Common
 @import "./components/common/modal.scss";
 @import "./components/common/modalLocationSelect.scss";
 @import "./components/common/selectBeach.scss";
 @import "./components/common/weatherInfoCircle.scss";
-
 
 *:not(dialog),
 *::before:not(dialog::before),
@@ -41,8 +40,9 @@ body {
   display: flex;
   flex-direction: column;
   background: white;
-  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Inter", "Helvetica", "Arial", sans-serif;
   line-height: 1;
+  overflow-x: hidden;
 }
 
 input,

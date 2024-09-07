@@ -11,8 +11,7 @@ const routes = [
     children: [
       { path: ROUTE_PATH.DASHBOARD, element: <WeatherHomePage /> },
       { path: ROUTE_PATH.ASTRO, element: <h1>Astro Info</h1> },
-      { path: ROUTE_PATH.FORECAST, element: <h1>Forecast Info</h1> },
-      { path: ROUTE_PATH.WAVES, element: <h1>Waves Info</h1> },
+      { path: ROUTE_PATH.WAVES, element: <h1>Oleaje</h1> },
     ]
   },
 ]

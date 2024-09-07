@@ -1,18 +1,22 @@
 import { useEffect, useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 import ModalLocationSelect from '../components/common/ModalLocationSelect'
+import Tabs from '../components/ui/Tabs'
 import useStoreUser from '../store/useStoreUser'
 
 const MainLayout = () => {
   const [isModalLocationSelectOpen, setIsModalLocationSelectOpen] = useState(false)
+  const navigate = useNavigate()
   const { user } = useStoreUser()
 
   useEffect(() => {
     if (!user.locationSelected) {
-      setIsModalLocationSelectOpen(true)
+      return setIsModalLocationSelectOpen(true)
     }
-  }, [user.locationSelected])
+    navigate('/home')
+  }, [navigate, user.locationSelected])
+
 
   return (
     <>
@@ -23,6 +27,7 @@ const MainLayout = () => {
           setIsOpen={setIsModalLocationSelectOpen}
         />
       </div>
+      <Tabs />
     </>
   )
 }

@@ -2115,6 +2115,27 @@ const CircleIcon = ({ width = '24', height = '24' }) => (
   </svg >
 )
 
+/** 
+* ArrowAngleIcon
+ * @typedef {Object} Props
+ * @param {object} props
+ * @param  {('right'|'left'|'up'|'down')} props.direction - Dirección de la flecha default 'right'
+*/
+
+const ArrowAngleIcon = ({ className, width = '10', height = '12', fill = '#020202', direction = 'right', onClick }) => {
+  const styleDirection = {
+    right: 'rotate(0deg)',
+    left: 'rotate(180deg)',
+    up: 'rotate(270deg)',
+    down: 'rotate(90deg)'
+  }
+  return (
+    <svg className={className} width={width} height={height} viewBox="0 0 9 11" fill="none" style={{ transform: styleDirection[direction] }} onClick={onClick}>
+      <path fillRule="evenodd" clipRule="evenodd" d="M0 9.82143L5.82353 5.5L0 1.17857L0.705882 0L8.11765 5.5L0.705882 11L0 9.82143Z" fill={fill} />
+    </svg>
+  )
+}
+
 export {
   ThermometerIcon,
   SeaWaveIcon,
@@ -2148,5 +2169,6 @@ export {
   WaveThermometerIcon,
   WindIcon,
   MarkerIcon,
-  CircleIcon
+  CircleIcon,
+  ArrowAngleIcon
 }

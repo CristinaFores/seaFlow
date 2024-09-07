@@ -8,7 +8,6 @@ import TitleLocation from '../components/ui/TitleLocation'
 import { useWeatherForecast } from '../hooks/useWeatherForecast'
 import useStoreUser from '../store/useStoreUser'
 
-
 function WeatherHomePage() {
   const { user, setUserDate, setUserTime } = useStoreUser()
   const { date, time } = user
@@ -50,10 +49,8 @@ function WeatherHomePage() {
           setTime={setUserTime}
         />
         <DayPicker
-          currentDate={date}
-          setCurrentDate={setUserDate}
+          selectedDate={date} setSelectedDate={setUserDate}
         />
-
       </section>
     </div>
   )
