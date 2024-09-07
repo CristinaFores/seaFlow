@@ -14,7 +14,7 @@ const MainLayout = () => {
     if (!user.locationSelected) {
       return setIsModalLocationSelectOpen(true)
     }
-    navigate('/home')
+    navigate('/astro')
   }, [navigate, user.locationSelected])
 
 

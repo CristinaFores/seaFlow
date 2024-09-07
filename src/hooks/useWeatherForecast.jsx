@@ -124,6 +124,7 @@ export const useWeatherForecast = () => {
           sunrise: dailyForecast.sunrise[0].split('T')[1],
           sunset: dailyForecast.sunset[0].split('T')[1],
           ...moonCurrentDate,
+          fullMoon: moonPhaseAnnual[moonData.closestphase.month].find((phase) => phase.phase === 'Full Moon'),
         },
         hourly: Array.from({ length: hourly?.time.length }, (_, index) => ({
           // ...dataM?.hour[index],
