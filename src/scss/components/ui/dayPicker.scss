@@ -1,15 +1,15 @@
 .day-picker {
   display: grid;
   grid-template-columns: auto repeat(7, 1fr) auto;
-  gap: 5px;
+  gap: 4px;
   width: 100%;
-  font-size: 1rem;
+  font-size: .8rem;
 
   &__button {
     background-color: $indigo-100;
     border: 1px solid $indigo-100;
     border-radius: 5px;
-    padding: 8px 5px;
+    padding: 8px 4px;
     width: 100%;
     transition: all 0.3s;
     display: flex;
@@ -44,5 +44,12 @@
     border-color: $indigo-500;
     transition: all 0.3s;
   }
-
+  &__arrow {
+    padding-inline: 4px;
+    svg {
+      width: 10px;
+      height: 10px;
+      fill: #555;
+    }
+  }
 }

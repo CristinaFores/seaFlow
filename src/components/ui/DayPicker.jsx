@@ -46,7 +46,7 @@ const DayPicker = ({ selectedDate, setSelectedDate, className }) => {
   return (
     <div className={`day-picker ${className}`}>
       <button
-        className="day-picker__button"
+        className="day-picker__arrow day-picker__button"
         onClick={prevDay}
         disabled={isPrevWeekDisabled}
       >
@@ -70,7 +70,7 @@ const DayPicker = ({ selectedDate, setSelectedDate, className }) => {
         ))
       }
       <button
-        className="day-picker__button"
+        className="day-picker__arrow day-picker__button"
         onClick={nextDay}
       >
         <ArrowAngleIcon direction="right" />
