@@ -1,14 +1,13 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 
-
 //Layouts
 @import "./layouts/mainLayout.scss";
 
 //Pages
 @import "./pages/weatherHomePage.scss";
 
-//Components 
+//Components
 
 //UI
 @import "./components/ui/button.scss";
@@ -16,13 +15,13 @@
 @import "./components/ui/titleLocation.scss";
 @import "./components/ui/dayPicker.scss";
 @import "./components/ui/timeSlider.scss";
+@import "./components/ui/tabs.scss";
 
 //Common
 @import "./components/common/modal.scss";
 @import "./components/common/modalLocationSelect.scss";
 @import "./components/common/selectBeach.scss";
 @import "./components/common/weatherInfoCircle.scss";
-
 
 *:not(dialog),
 *::before:not(dialog::before),
@@ -41,8 +40,9 @@ body {
   display: flex;
   flex-direction: column;
   background: white;
-  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Inter", "Helvetica", "Arial", sans-serif;
   line-height: 1;
+  overflow-x: hidden;
 }
 
 input,
@@ -98,5 +98,197 @@ button {
 
   &:disabled {
     cursor: not-allowed;
+  }
+}
+
+.astro-page {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+
+  &__canvas {
+    width: 100%;
+    height: 50vh !important;
+  }
+}
+
+// Variables
+$primary-color: #333;
+$secondary-color: #666;
+$background-color: #f5f5f5;
+$card-bg: #ffffff;
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-hover: rgba(0, 0, 0, 0.2);
+
+// Bloque principal
+// .moon-card {
+//   background: $card-bg;
+//   border-radius: 12px;
+
+//   display: flex;
+//   flex-direction: column;
+//   gap: 20px;
+
+//   // Elemento header
+//   &__header {
+//     &-title {
+//       font-size: 24px;
+//       color: $primary-color;
+//     }
+
+//     &-description {
+//       font-size: 18px;
+
+//       color: $secondary-color;
+//     }
+//   }
+
+//   &__illumination {
+//     margin-top: 10px;
+//   }
+
+//   &__illumination-bar {
+//     background-color: #e0e0e0;
+
+//     width: 100%;
+//     height: 15px;
+//     margin-top: 5px;
+//     position: relative;
+//   }
+
+//   &__illumination-fill {
+//     background-color: $indigo-500;
+//     height: 100%;
+
+//     transition: width 0.3s ease;
+//   }
+
+//   // Elemento info-container
+//   &__info-container {
+//     display: flex;
+//     justify-content: space-between;
+
+//     // Elemento bloque de información
+//     &__info-block {
+//       background-color: #f0f0f0;
+//       padding: 15px;
+//       border-radius: 8px;
+//       width: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 10px;
+
+//       &:last-child {
+//         margin-right: 0;
+//       }
+
+//       &-title {
+//         font-size: 16px;
+//         margin-bottom: 10px;
+//         color: $primary-color;
+//       }
+
+//       &-content {
+//         font-size: 14px;
+//         color: $secondary-color;
+
+//         strong {
+//           color: $primary-color;
+//         }
+//       }
+//     }
+//   }
+// }
+// Variables
+$primary-color: #333;
+$secondary-color: #666;
+$background-color: #f5f5f5;
+$card-bg: #ffffff;
+
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-hover: rgba(0, 0, 0, 0.2);
+
+// Bloque principal
+.moon-card {
+  background: $card-bg;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px $shadow-light;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch; // Estiramos los hijos para ocupar el ancho completo
+  transition: 0.3s ease-in-out;
+
+  // Elemento header
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-title {
+      font-size: 24px;
+      color: $primary-color;
+    }
+
+    &-description {
+      font-size: 18px;
+      color: $secondary-color;
+    }
+  }
+
+  &__illumination {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-bar {
+      background-color: #e0e0e0;
+      width: 100%;
+      height: 20px;
+      overflow: hidden; // Para que el contenido no salga del borde
+      position: relative;
+    }
+
+    &-fill {
+      background-color: $indigo-500;
+      height: 100%;
+
+      transition: width 0.3s ease;
+    }
+  }
+
+  // Elemento info-container
+  &__info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; // Espacio entre bloques de información
+    flex-wrap: wrap; // Para que los bloques no se salgan en pantallas pequeñas
+
+    // Elemento bloque de información
+    &__info-block {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
+      flex: 1; // Los bloques ocuparán el mismo espacio
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &-title {
+        font-size: 16px;
+        color: $primary-color;
+      }
+
+      &-content {
+        font-size: 14px;
+        color: $secondary-color;
+
+        strong {
+          color: $primary-color;
+        }
+      }
+    }
   }
 }

@@ -8,13 +8,13 @@
   min-width: 300px;
   min-height: 300px;
   z-index: 1;
-
   display: grid;
   place-items: center;
-  position: relative;
   justify-content: center;
   grid-template-columns: calc(12% + 7px) 1fr auto 1fr calc(12% + 7px);
-  grid-template-rows: calc(15% - 14px) repeat(2, 1fr) auto repeat(2, 1fr) calc( 14% - 14px );
+  grid-template-rows: calc(15% - 14px) repeat(2, 1fr) auto repeat(2, 1fr) calc(
+      14% - 14px
+    );
 
   &__container {
     border-radius: 50%;
@@ -47,14 +47,14 @@
     stroke-dashoffset: 0;
   }
 
-  li , a{
+  li,
+  a {
     overflow: hidden;
     width: fit-content;
     height: fit-content;
     font-size: 15px;
     color: #555;
     display: flex;
-    align-items: center;
     position: relative;
     cursor: pointer;
     z-index: 2;
@@ -66,14 +66,13 @@
     grid-row: 2;
     align-self: end;
     justify-self: center;
- 
   }
   &__temperature {
     grid-column: 3;
     grid-row: 2;
     align-self: end;
     justify-self: center;
-    align-items: flex-end !important;
+    align-items: flex-end;
     svg {
       width: 2.5em;
       height: 2.2em;
@@ -84,7 +83,7 @@
     grid-row: 2;
     align-self: end;
     justify-self: center;
-    align-items: flex-end !important;
+    align-items: flex-end;
     svg {
       width: 2em;
       height: 2em;
@@ -95,16 +94,17 @@
     grid-column: 2;
     grid-row: 3;
     justify-self: center;
-    align-items: flex-end !important;
+    align-items: flex-end;
   }
   &__wind {
     grid-column: 3;
     grid-row: 3;
     align-self: center;
-    align-items: flex-end !important;
-    align-items: center !important;
+    align-items: center;
+    p {
+      width: 9ch;
+    }
     svg:first-child {
-      // wip
       left: 8px;
       position: relative;
     }
@@ -128,10 +128,14 @@
   &__wind-direction {
     grid-column: 4;
     grid-row: 3;
-    align-items: flex-end !important;
+    align-items: flex-end;
     align-self: center;
     justify-self: center;
-    justify-content: center !important;
+    justify-content: center;
+
+    p {
+      width: 5ch;
+    }
   }
 
   &__time {
@@ -150,38 +154,54 @@
   &__wave-height {
     grid-column: 2;
     grid-row: 5;
-    align-items: flex-end !important;
-  
+    align-items: flex-end;
     align-self: center;
-    justify-content: center !important;
+    justify-content: center;
+
+    p {
+      width: 6ch;
+    }
+
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
   }
 
   &__wave-period {
     grid-column: 3;
     grid-row: 5;
-    align-items: flex-end !important;
+    align-items: flex-end;
+    justify-content: center;
     align-self: center;
     justify-self: center;
-    justify-content: center !important;
+
+    p {
+      width: 5ch;
+    }
     svg {
-      width: 2em;
-      height: 2em;
+      width: 1.5em;
+      height: 1.5em;
     }
   }
 
   &__wave-direction {
     grid-column: 4;
     grid-row: 5;
-    align-items: flex-end !important;
+    align-items: flex-end;
+    justify-content: center;
     align-self: center;
     justify-self: center;
-    justify-content: center !important;
+
+    p {
+      width: 5ch;
+    }
   }
 
   &__water-temperature {
     grid-column: 3;
     grid-row: 6;
-    align-items: flex-end !important;
+    align-items: flex-end;
   }
 
   &__sunrise {
